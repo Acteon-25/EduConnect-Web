@@ -2,7 +2,7 @@ import Buscador from '../icons/Buscador.svg'
 
 const Footer = () => {
   return (
-    <footer class="shadow bg-black/20 backdrop-blur-lg w-full mx-auto py-3 px-7">
+    <footer className="shadow bg-black/20 backdrop-blur-lg w-full mx-auto py-3 px-7">
       <div className="grid grid-cols-6">
         <div className="col-span-2">
           <img src={Buscador} alt="" className='size-9' />
@@ -42,9 +42,9 @@ const Footer = () => {
         </div>
       </div>
       <div
-        class="w-full mx-auto max-w-screen-xl p-4 md:flex md:items-center md:justify-between"
+        className="w-full mx-auto max-w-screen-xl p-4 md:flex md:items-center md:justify-between"
       >
-        <span class="text-sm text-black "
+        <span className="text-sm text-black "
         >© 2023 Jean Coaquira
           Todos los derechos reservados
         </span>
