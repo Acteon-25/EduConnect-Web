@@ -10,7 +10,7 @@ const RegisterPage = () => {
     return (
         <>
             <Header />
-            <SectionContainer className="grid sm:grid-cols-2  sm:py-16 p-5 lg:w-auto gap-4 place-items-cente sm:my-32 md:place-items-center md:my-24 xl:my-0">
+            <SectionContainer className="grid sm:grid-cols-2  sm:py-16 p-5 lg:w-auto gap-4 place-items-center sm:my-32 md:place-items-center md:my-24 xl:my-0">
                 <img src={Profesor} alt="" className="rounded-xl aspect-square sm:w-[300px] md:w-[380px] xl:w-[550px] " />
                 <div className="">
                     <h2>Bienvenido</h2>
