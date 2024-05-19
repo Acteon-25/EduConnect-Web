@@ -1,10 +1,9 @@
 import SectionContainer from "../components/SectionContainer"
-import { useNavigate,Navigate } from 'react-router-dom'
+import { useNavigate, Navigate } from 'react-router-dom'
 import Alumno from '../img/AlumnoOscuro.jpeg'
 import { useState } from "react"
 import Header from "../components/Header"
 import Footer from "../components/Footer"
-
 
 const LoginPage = () => {
     const navigate = useNavigate()
@@ -19,13 +18,13 @@ const LoginPage = () => {
         console.log(user)
     }
 
-    if(user){
+    if (user) {
         return <Navigate to={`/login/${user.name}`} />
     }
 
     return (
         <>
-        <Header />
+            <Header />
             <SectionContainer className="grid sm:grid-cols-2  sm:py-16 p-5 lg:w-auto gap-4 place-items-cente sm:my-32 md:place-items-center md:my-24 xl:my-0">
                 <img src={Alumno} alt="" className="rounded-xl aspect-square sm:w-[300px] md:w-[380px] xl:w-[550px] " />
                 <div>

@@ -5,7 +5,6 @@ import Buscador from '../icons/Buscador.svg'
 import Notification from '../icons/Notification.svg'
 import Foto from '../img/Foto.png'
 
-
 const LoginUserPage = () => {
 
     const { id } = useParams()

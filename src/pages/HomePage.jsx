@@ -6,13 +6,12 @@ import { useNavigate } from 'react-router-dom'
 import Header from "../components/Header"
 import Footer from "../components/Footer"
 
-
 const HomePage = () => {
   const navigate = useNavigate();
 
   return (
     <>
-    <Header />
+      <Header />
       <SectionContainer className="grid grid-cols-2">
         <h1 className="text-5xl font-bold grid-cols-1">Donde el conocimiento y el éxito se encuentran</h1>
         <img src="https://st2.depositphotos.com/2379655/7898/i/450/depositphotos_78986424-stock-photo-curious-school-student-reading-a.jpg" alt="" className="w-full grid-cols-1" />
@@ -53,7 +52,7 @@ const HomePage = () => {
             backgroundImage: `url(${Alumno})`
           }}>
             <h3 className="text-3xl text-white font-bold m-3">Para estudiante</h3>
-            <button className="border border-white text-white rounded-xl py-1 px-4" onClick={()=>{
+            <button className="border border-white text-white rounded-xl py-1 px-4" onClick={() => {
               navigate("/login");
             }}>Comenzar clases hoy</button>
           </div>
@@ -61,7 +60,7 @@ const HomePage = () => {
             backgroundImage: `url(${Profesor})`
           }}>
             <h3 className="text-3xl text-white font-bold m-3">Para asesor</h3>
-            <button className="border border-white text-white rounded-xl py-1 px-4" onClick={()=>{
+            <button className="border border-white text-white rounded-xl py-1 px-4" onClick={() => {
               navigate("/register");
             }} >Comenzar a enseñar hoy</button>
           </div>
