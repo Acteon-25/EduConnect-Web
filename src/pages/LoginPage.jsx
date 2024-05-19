@@ -6,9 +6,6 @@ import Header from "../components/Header"
 import Footer from "../components/Footer"
 
 
-
-
-
 const LoginPage = () => {
     const navigate = useNavigate()
 
@@ -23,7 +20,7 @@ const LoginPage = () => {
     }
 
     if(user){
-        return <Navigate to="/login/Jean" />
+        return <Navigate to={`/login/${user.name}`} />
     }
 
     return (
@@ -49,7 +46,7 @@ const LoginPage = () => {
                     <h3>User Name</h3>
                     <input type="text" placeholder="Ingrese su username" className="border border-sky-500 rounded-full px-4 py-1" />
                     <h3>Password</h3>
-                    <input type="text" placeholder="Ingrese su contraseña" className="border border-sky-500 rounded-full px-4 py-1" />
+                    <input type="password" placeholder="Ingrese su contraseña" className="border border-sky-500 rounded-full px-4 py-1" />
                     <button className="bg-sky-500 rounded-full text-white px-6 py-1 block my-4" onClick={login}>
                         Login
                     </button>

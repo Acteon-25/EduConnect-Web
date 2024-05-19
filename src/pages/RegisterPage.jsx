@@ -32,7 +32,7 @@ const RegisterPage = () => {
                     <h3>User Name</h3>
                     <input type="text" placeholder="Ingrese su username" className="border border-sky-500 rounded-full px-4 py-1" />
                     <h3>Password</h3>
-                    <input type="text" placeholder="Ingrese su contraseña" className="border border-sky-500 rounded-full px-4 py-1" />
+                    <input type="password" placeholder="Ingrese su contraseña" className="border border-sky-500 rounded-full px-4 py-1" />
                     <button className="bg-sky-500 rounded-full text-white px-6 py-1 block my-4 ">
                         Registrate
                     </button>
