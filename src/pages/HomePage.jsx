@@ -2,11 +2,17 @@ import Goals from "../components/Goals";
 import SectionContainer from "../components/SectionContainer";
 import Profesor from '../img/ProfesorOscuro.jpeg'
 import Alumno from '../img/AlumnoOscuro.jpeg'
+import { useNavigate } from 'react-router-dom'
+import Header from "../components/Header"
+import Footer from "../components/Footer"
+
 
 const HomePage = () => {
+  const navigate = useNavigate();
 
   return (
     <>
+    <Header />
       <SectionContainer className="grid grid-cols-2">
         <h1 className="text-5xl font-bold grid-cols-1">Donde el conocimiento y el éxito se encuentran</h1>
         <img src="https://st2.depositphotos.com/2379655/7898/i/450/depositphotos_78986424-stock-photo-curious-school-student-reading-a.jpg" alt="" className="w-full grid-cols-1" />
@@ -43,20 +49,25 @@ const HomePage = () => {
         <h2>Que es tal Educconect</h2>
         <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Ipsa et optio repudiandae commodi pariatur atque?</p>
         <div className="grid grid-cols-2 text-center px-8 gap-4">
-          <div className="bg-local bg-cover aspect-video w-full border border-blue-600 rounded-xl place-content-center my-5" style={{
+          <div className="bg-local bg-cover aspect-video w-full rounded-xl place-content-center my-5" style={{
             backgroundImage: `url(${Alumno})`
           }}>
             <h3 className="text-3xl text-white font-bold m-3">Para estudiante</h3>
-            <button className="border border-white text-white rounded-xl py-1 px-4">Comenzar clases hoy</button>
+            <button className="border border-white text-white rounded-xl py-1 px-4" onClick={()=>{
+              navigate("/login");
+            }}>Comenzar clases hoy</button>
           </div>
-          <div className="bg-local bg-cover aspect-video w-full border border-blue-600 rounded-xl place-content-center my-5" style={{
+          <div className="bg-local bg-cover aspect-video w-full rounded-xl place-content-center my-5" style={{
             backgroundImage: `url(${Profesor})`
           }}>
             <h3 className="text-3xl text-white font-bold m-3">Para asesor</h3>
-            <button className="border border-white text-white rounded-xl py-1 px-4">Comenzar a enseñar hoy</button>
+            <button className="border border-white text-white rounded-xl py-1 px-4" onClick={()=>{
+              navigate("/register");
+            }} >Comenzar a enseñar hoy</button>
           </div>
         </div>
       </SectionContainer>
+      <Footer />
     </>
   )
 }
