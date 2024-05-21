@@ -30,6 +30,8 @@ const PricingPage = () => {
                 "Acceso a asesorias personalizadas",
                 "Soporte en horario laboral",
                 "Foro",
+                "Acceso limitado a material de la biblioteca",
+                "Comentarios y evaluaciones sobre asesorías",
               ]}
             />
 
@@ -38,9 +40,10 @@ const PricingPage = () => {
               plan="Premium"
               precio="79.99/mes"
               caracteristicas={[
-                "Acceso a la biblioteca virtual",
+                "Acceso ilimitado a la biblioteca virtual",
                 "Soporte 24hs",
                 "Acceso a reportes de notas y cometarios del alumno",
+                "El número del sr. vásquez",
               ]}
               highlighted
             />
@@ -51,10 +54,12 @@ const PricingPage = () => {
               precio="119.99/mes"
               caracteristicas={[
                 "Asesorías múltiples en 1 día",
-                "Acceso a Biblioteca digital",
                 "Capacitación Soporte 24hs",
                 "Elección de Asesores",
-                "El número del CEO para llamarlo directamente",
+                "El número del CEO Jhonatan Fernandez para llamarlo directamente",
+                "Acceso al código fuente",  
+                "Acceso a la casa del sr. vásquez",
+                "Acceso a party de 5 de divine a +",
               ]}
             />
           </div>
