@@ -12,6 +12,7 @@ const HomePage = () => {
   return (
     <>
       <Header />
+      <br />
       <SectionContainer className="grid grid-cols-2">
         <h1 className="text-5xl font-bold grid-cols-1">Donde el conocimiento y el éxito se encuentran</h1>
         <img src="https://st2.depositphotos.com/2379655/7898/i/450/depositphotos_78986424-stock-photo-curious-school-student-reading-a.jpg" alt="" className="w-full grid-cols-1" />

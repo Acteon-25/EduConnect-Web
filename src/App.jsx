@@ -5,6 +5,7 @@ import RegisterPage from "./pages/RegisterPage"
 import LoginUserPage from "./pages/LoginUserPagina"
 import PricingPage from "./pages/PricingPage"
 import ErrorPage from "./pages/ErrorPage"
+import NosotrosPage from './pages/NosotrosPage'
 
 function App() {
 
@@ -18,6 +19,7 @@ function App() {
           <Route path="/login" element={<LoginPage />} />
           <Route path="/register" element={<RegisterPage />} />
           <Route path="/login/:id" element={<LoginUserPage />} />
+          <Route path="/nosotros" element={<NosotrosPage/>} />
           <Route path="*" element={<ErrorPage />} />
         </Routes>
       </BrowserRouter>

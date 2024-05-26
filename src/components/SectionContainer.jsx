@@ -1,3 +1,4 @@
+// eslint-disable-next-line react/prop-types
 const SectionContainer = ({ children, className }) => {
 
   return (
