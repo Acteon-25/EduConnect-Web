@@ -6,6 +6,7 @@ import LoginUserPage from "./pages/LoginUserPagina"
 import PricingPage from "./pages/PricingPage"
 import ErrorPage from "./pages/ErrorPage"
 import NosotrosPage from './pages/NosotrosPage'
+import RestablecerPage from './pages/RestablecerPage'
 
 function App() {
 
@@ -20,6 +21,7 @@ function App() {
           <Route path="/register" element={<RegisterPage />} />
           <Route path="/login/:id" element={<LoginUserPage />} />
           <Route path="/nosotros" element={<NosotrosPage/>} />
+          <Route path="/restablecer-clave" element={<RestablecerPage/>} />
           <Route path="*" element={<ErrorPage />} />
         </Routes>
       </BrowserRouter>
