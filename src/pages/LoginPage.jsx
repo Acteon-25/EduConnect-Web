@@ -4,6 +4,7 @@ import Alumno from '../img/AlumnoOscuro.jpeg'
 import { useState } from "react"
 import Header from "../components/Header"
 import Footer from "../components/Footer"
+import {Link} from 'react-router-dom'
 
 const LoginPage = () => {
     const navigate = useNavigate()
@@ -48,7 +49,8 @@ const LoginPage = () => {
                     <input type="password" placeholder="Ingrese su contraseña" className="border border-sky-500 rounded-full px-4 py-1" />
                     <button className="bg-sky-500 rounded-full text-white px-6 py-1 block my-4" onClick={login}>
                         Login
-                    </button>
+                    </button>             
+                    <Link className="text-sky-500 hover:text-sky-900 transition duration-300 underline font-medium" to="/restablecer-clave">Olvidaste tu contraseña?</Link>
                 </div>
             </SectionContainer>
             <Footer />

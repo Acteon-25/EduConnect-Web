@@ -8,6 +8,8 @@ import ErrorPage from "./pages/ErrorPage"
 import BibliotecaPage from "./pages/BibliotecaPage"
 import DashboardPage from "./pages/DashboardPage"
 import EditProfilePage from "./pages/EditProfile"
+import NosotrosPage from './pages/NosotrosPage'
+import RestablecerPage from './pages/RestablecerPage'
 
 function App() {
 
@@ -21,6 +23,8 @@ function App() {
           <Route path="/login" element={<LoginPage />} />
           <Route path="/register" element={<RegisterPage />} />
           <Route path="/login/:id" element={<LoginUserPage />} />
+          <Route path="/nosotros" element={<NosotrosPage/>} />
+          <Route path="/restablecer-clave" element={<RestablecerPage/>} />
           <Route path="/biblioteca" element={<BibliotecaPage />} />
           <Route path="/dashboard" element={<DashboardPage />} />
           <Route path="/editProfile" element={<EditProfilePage />} />
