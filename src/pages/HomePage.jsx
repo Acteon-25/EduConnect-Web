@@ -54,7 +54,7 @@ const HomePage = () => {
           }}>
             <h3 className="text-3xl text-white font-bold m-3">Para estudiante</h3>
             <button className="border border-white text-white rounded-xl py-1 px-4" onClick={() => {
-              navigate("/login");
+              navigate("/registerAlumno");
             }}>Comenzar clases hoy</button>
           </div>
           <div className="bg-local bg-cover aspect-video w-full rounded-xl place-content-center my-5" style={{
@@ -62,7 +62,7 @@ const HomePage = () => {
           }}>
             <h3 className="text-3xl text-white font-bold m-3">Para asesor</h3>
             <button className="border border-white text-white rounded-xl py-1 px-4" onClick={() => {
-              navigate("/register");
+              navigate("/registerAsesor");
             }} >Comenzar a enseñar hoy</button>
           </div>
         </div>

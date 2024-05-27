@@ -10,6 +10,7 @@ import DashboardPage from "./pages/DashboardPage"
 import EditProfilePage from "./pages/EditProfile"
 import NosotrosPage from './pages/NosotrosPage'
 import RestablecerPage from './pages/RestablecerPage'
+import RegisterAsesorPage from './pages/RegisterAsesorPage'
 
 function App() {
 
@@ -21,10 +22,11 @@ function App() {
           <Route path="/" element={<HomePage />} />
           <Route path="/pricing" element={<PricingPage />} />
           <Route path="/login" element={<LoginPage />} />
-          <Route path="/register" element={<RegisterPage />} />
+          <Route path="/registerAlumno" element={<RegisterPage />} />
+          <Route path="/registerAsesor" element={<RegisterAsesorPage />} />
           <Route path="/login/:id" element={<LoginUserPage />} />
-          <Route path="/nosotros" element={<NosotrosPage/>} />
-          <Route path="/restablecer-clave" element={<RestablecerPage/>} />
+          <Route path="/nosotros" element={<NosotrosPage />} />
+          <Route path="/restablecer-clave" element={<RestablecerPage />} />
           <Route path="/biblioteca" element={<BibliotecaPage />} />
           <Route path="/dashboard" element={<DashboardPage />} />
           <Route path="/editProfile" element={<EditProfilePage />} />

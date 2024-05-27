@@ -76,14 +76,6 @@ const Header = () => {
         >
           Iniciar sesión
         </button>
-        <button
-          className="text-white"
-          onClick={() => {
-            navigate("/register");
-          }}
-        >
-          Registrarse
-        </button>
       </nav>
     </header>
   );
