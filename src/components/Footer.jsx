@@ -82,7 +82,7 @@ function Footer() {
           <p>
             Hecho con ❤️ EduConnect.
             <br />
-            Héctor Vega - Jean Coaquira
+            Héctor Vega - Jean Coaquira - Jhonatan Fernandez - Giancarlo Vasquez
           </p>
         </div>
       </div>
