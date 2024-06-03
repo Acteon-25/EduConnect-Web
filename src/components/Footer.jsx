@@ -82,11 +82,7 @@ function Footer() {
           <p>
             Hecho con ❤️ EduConnect.
             <br />
-<<<<<<< HEAD
             Héctor Vega - Jean Coaquira - Jhonatan Fernandez - Giancarlo Vasquez alias skgiani sin forzar push
-=======
-            Héctor Vega - Jean Coaquira - Jhonatan Fernandez - Giancarlo Vasquez alias skgiani nuevo commit
->>>>>>> 2f1d9aeeb10d4415cb039b9e40700eb54cb79fcc
           </p>
         </div>
       </div>
