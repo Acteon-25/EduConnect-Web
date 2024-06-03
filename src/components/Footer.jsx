@@ -82,11 +82,7 @@ function Footer() {
           <p>
             Hecho con ❤️ EduConnect.
             <br />
-<<<<<<< HEAD
             Héctor Vega - Jean Coaquira - Jhonatan Fernandez - Giancarlo Vasquez alias skgiani ahdakjhdlkjahf
-=======
-            Héctor Vega - Jean Coaquira - Jhonatan Fernandez - Giancarlo Vasquez alias skgiani sin forzar push
->>>>>>> 523c753742fdb02d0c35f450474414436b66db4e
           </p>
         </div>
       </div>
