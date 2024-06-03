@@ -82,7 +82,7 @@ function Footer() {
           <p>
             Hecho con ❤️ EduConnect.
             <br />
-            Lorem ipsum, dolor sit amet consectetur adipisicing elit. Est, explicabo!
+            Héctor Vega - Jean Coaquira
           </p>
         </div>
       </div>
