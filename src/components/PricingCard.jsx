@@ -1,3 +1,4 @@
+import { data } from 'autoprefixer';
 import axios from 'axios'
 import { useNavigate } from 'react-router-dom';
 
@@ -12,16 +13,10 @@ const PricingCard = ({ plan, precio, caracteristicas, highlighted = false, value
       tokenTemporal: localStorage.getItem('token')
 
     }
-    console.log(compra);
-    try {
-      const response = await axios.post('http://localhost:8080/membresias/comprar', compra)
-      console.log("Compra exitosa")
-      const token = response.data
-      localStorage.setItem('token', token)
-    } catch (e) {
-      console.error('Error al comprar la membresía:', e);
+      const response = await axios.post('http://localhost:8080/membresias/comprar',compra)
+      console.log(response);
 
-    }
+
   }
 
 
