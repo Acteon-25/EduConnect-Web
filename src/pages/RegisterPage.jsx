@@ -1,11 +1,30 @@
 import SectionContainer from "../components/SectionContainer"
 import { useNavigate } from 'react-router-dom'
+import { useState } from "react";
+import axios from "axios";
 import Alumno from '../img/AlumnoOscuro.jpeg'
 import Header from "../components/Header"
 import Footer from "../components/Footer"
 
-const RegisterPage = () => {
+function RegisterPage() {
   const navigate = useNavigate()
+  const [nombre, setNombre] = useState("");
+  const [correoElectronico, setCorreoElectronico] = useState("");
+  const [contrasena, setContrasena] = useState("");
+
+  const save = async (event) => {
+    event.preventDefault();
+    try {
+      await axios.post("http://localhost:8080/registro/estudiante", {
+        nombre: nombre,
+        correoElectronico: correoElectronico,
+        contrasena: contrasena,
+      });
+      alert("Usuario Registrado Exitosamente");
+    } catch (err) {
+      alert(err);
+    }
+  }
 
   return (
     <>
@@ -27,15 +46,26 @@ const RegisterPage = () => {
             </button>
           </div>
           <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Ullam, iusto.</p>
-          <h3>Email</h3>
-          <input type="email" name="" id="" placeholder="Ingrese su email" className="border border-sky-500 rounded-full px-4 py-1" />
-          <h3>User Name</h3>
-          <input type="text" placeholder="Ingrese su username" className="border border-sky-500 rounded-full px-4 py-1" />
-          <h3>Password</h3>
-          <input type="password" placeholder="Ingrese su contraseña" className="border border-sky-500 rounded-full px-4 py-1" />
-          <button className="bg-sky-500 rounded-full text-white px-6 py-1 block my-4 ">
-            Registrate
-          </button>
+          <form>
+            <h3>Email</h3>
+            <input type="email" placeholder="Ingrese su email" className="border border-sky-500 rounded-full px-4 py-1" id="correoElectronico" value={correoElectronico}
+              onChange={(event) => {
+                setCorreoElectronico(event.target.value);
+              }} />
+            <h3>User Name</h3>
+            <input type="text" placeholder="Ingrese su username" className="border border-sky-500 rounded-full px-4 py-1" id="nombre" value={nombre}
+              onChange={(event) => {
+                setNombre(event.target.value);
+              }} />
+            <h3>Password</h3>
+            <input type="password" placeholder="Ingrese su contraseña" className="border border-sky-500 rounded-full px-4 py-1" id="contrasena" value={contrasena}
+              onChange={(event) => {
+                setContrasena(event.target.value);
+              }} />
+            <button type="submit" className="bg-sky-500 rounded-full text-white px-6 py-1 block my-4 " onClick={save}>
+              Registrate
+            </button>
+          </form>
         </div>
       </SectionContainer>
       <Footer />

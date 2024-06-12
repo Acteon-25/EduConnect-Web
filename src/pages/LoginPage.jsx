@@ -46,6 +46,13 @@ const LoginPage = () => {
             Login
           </button>
           <Link className="text-sky-500 hover:text-sky-900 transition duration-300 underline font-medium" to="/restablecer-clave">Olvidaste tu contraseña?</Link>
+          <div className="flex flex-row gap-2 my-3">
+            <p className="text-gray-600">
+              ¿Eres nuevo en EduConnect?
+            </p>
+            <Link className="text-red-600 underline" to="/registerAlumno">Registrate</Link>
+          </div>
+
         </div>
       </SectionContainer>
       <Footer />
