@@ -1,6 +1,31 @@
-import React from "react";
+import axios from 'axios'
 
-const PricingCard = ({ plan, precio, caracteristicas, highlighted = false }) => {
+const PricingCard = ({plan, precio, caracteristicas, highlighted = false, value }) => {
+
+  async function comprarMembresia() {
+
+    const compra = {
+      tipoMembresia: value,
+      tokenTemporal: localStorage.getItem('token')
+
+    }
+    console.log(compra);
+    try{
+      const response = await axios.post('http://localhost:8080/membresias/comprar',compra)
+      console.log("Compra exitosa")
+      const token = response.data
+      localStorage.setItem('token', token)
+    }catch(e){
+      console.error('Error al comprar la membresía:', e);
+    }
+  }
+
+
+  const handleClick = (() =>{
+    comprarMembresia()
+  })
+  
+  
   return (
     <div
       className={`bg-white rounded-lg shadow-md overflow-hidden p-6 ${highlighted ? "border-2 border-blue-500" : ""
@@ -17,7 +42,9 @@ const PricingCard = ({ plan, precio, caracteristicas, highlighted = false }) => 
       </ul>
       <button
         className={`mt-6 block w-full py-2 px-4 rounded-md shadow bg-blue-500 hover:bg-blue-700 text-white ${highlighted ? "bg-blue-700 hover:bg-blue-900" : ""
-          }`}
+          }`
+        } 
+        onClick={handleClick}
       >
         Elegir Plan
       </button>
