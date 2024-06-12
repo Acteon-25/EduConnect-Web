@@ -13,6 +13,7 @@ import RestablecerPage from './pages/RestablecerPage'
 import RegisterAsesorPage from './pages/RegisterAsesorPage'
 import AdministracionUsuariosPage from "./pages/AdministracionUsuariosPage"
 import AdministrarAsesoresPage from "./pages/AdministrarAsesoresPage"
+import MeetingPage from "./pages/MeetingPage"
 
 function App() {
 
@@ -34,6 +35,7 @@ function App() {
           <Route path="/administracionUsuarios" element={<AdministracionUsuariosPage />} />
           <Route path="/editProfile" element={<EditProfilePage />} />
           <Route path="/dashboard" element={<DashboardPage />} />
+          <Route path="/meeting" element={<MeetingPage />} />
           <Route path="*" element={<ErrorPage />} />
         </Routes>
       </BrowserRouter>

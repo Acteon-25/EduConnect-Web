@@ -1,9 +1,10 @@
 import { useParams } from 'react-router-dom'
 import SideBar from '../components/SideBar'
-import cam from '../img/cam.png'
 import Buscador from '../icons/Buscador.svg'
 import Notification from '../icons/Notification.svg'
 import Foto from '../img/Foto.png'
+
+
 
 const LoginUserPage = () => {
 
@@ -32,7 +33,6 @@ const LoginUserPage = () => {
                     Asesorias
                 </div>
                 <div>
-                    <img src={cam} alt="" />
                 </div>
                 <div>
                     Tareas
