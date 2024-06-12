@@ -1,15 +1,13 @@
 import SectionContainer from "../components/SectionContainer"
 import { useState } from 'react'
 import { useNavigate } from 'react-router-dom'
-import { useState } from "react";
-import axios from "axios";
 import Alumno from '../img/AlumnoOscuro.jpeg'
 import Header from "../components/Header"
 import Footer from "../components/Footer"
 import axios from 'axios'
 
 
-function RegisterPage() {
+const RegisterPage = () => {
   const navigate = useNavigate()
 
 
@@ -17,7 +15,7 @@ function RegisterPage() {
   const [nombre, setNombre] = useState();
   const [contrasena, setContrasena] = useState();
 
-  async function crearEstudiante () {Ñ
+  async function crearEstudiante () {
       try {
         const nuevoEstudiante = {
           nombre: nombre,
@@ -26,7 +24,7 @@ function RegisterPage() {
         };
         const response = await axios.post('http://localhost:8080/registro/estudiante', nuevoEstudiante);
         localStorage.setItem('token', response.data.tokenTemporal); 
-        navigate('/login/')
+        navigate('/pricing/')
       }catch (e){
         console.log('Error al crear usuario', e);
       }

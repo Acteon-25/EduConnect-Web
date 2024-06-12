@@ -6,15 +6,13 @@ import LoginUserPage from "./pages/LoginUserPagina"
 import PricingPage from "./pages/PricingPage"
 import ErrorPage from "./pages/ErrorPage"
 import BibliotecaPage from "./pages/BibliotecaPage"
+import DashboardPage from "./pages/DashboardPage"
 import EditProfilePage from "./pages/EditProfile"
 import NosotrosPage from './pages/NosotrosPage'
 import RestablecerPage from './pages/RestablecerPage'
 import RegisterAsesorPage from './pages/RegisterAsesorPage'
-import Inicio from "./pages/inicio"
-import Login from "./pages/inicioLogin"
-import AdministrarAsesoresPage from "./pages/AdministrarAsesoresPage"
 import AdministracionUsuariosPage from "./pages/AdministracionUsuariosPage"
-
+import AdministrarAsesoresPage from "./pages/AdministrarAsesoresPage"
 
 function App() {
 
@@ -35,8 +33,7 @@ function App() {
           <Route path="/administrarAsesores" element={<AdministrarAsesoresPage />} />
           <Route path="/administracionUsuarios" element={<AdministracionUsuariosPage />} />
           <Route path="/editProfile" element={<EditProfilePage />} />
-          <Route path="/inicio" element={<Inicio />} />
-          <Route path="/inicioLogin" element={<Login />} />
+          <Route path="/dashboard" element={<DashboardPage />} />
           <Route path="*" element={<ErrorPage />} />
         </Routes>
       </BrowserRouter>

@@ -1,5 +1,5 @@
 import { Link, useNavigate } from 'react-router-dom';
-import { useState} from 'react'
+import { useState } from 'react'
 import Alumno from '../img/AlumnoOscuro.jpeg';
 import Header from "../components/Header";
 import Footer from "../components/Footer";
@@ -13,24 +13,24 @@ const LoginPage = () => {
   const [contrasena, setContrasena] = useState();
 
 
-  async function login(){
-    try{
+  async function login() {
+    try {
       const details = {
         correoElectronico: email,
         contrasena: contrasena,
       }
-      const response = await axios.post('http://localhost:8080/login',details);
+      const response = await axios.post('http://localhost:8080/login', details);
       const token = response.data;
-      localStorage.setItem('token', token); 
-      navigate('/pricing')
+      localStorage.setItem('token', token);
+      navigate('/registerAlumno') // FALTA CAMBIAR LA REDIRECCION AL INICIAR SESION
 
-    }catch (e){
+    } catch (e) {
       throw new Error(e.response?.data?.message || 'Error al iniciar sesión');
     }
   }
 
 
-   const handleSubmit = (e) =>{
+  const handleSubmit = (e) => {
     e.preventDefault();
     login()
   }
@@ -46,32 +46,32 @@ const LoginPage = () => {
           <h2>Bienvenido</h2>
           <div className="border rounded-full py-3 px-4 grid grid-cols-1">
             <button className="bg-sky-500 rounded-full text-white py-2" onClick={() => {
-              navigate("/login"); // Navegar a la página de inicio de sesión real
+              navigate("/login");
             }}>
               Login
             </button>
           </div>
           <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Ullam, iusto.</p>
           <h3>Correo</h3>
-          <input type="text" placeholder="Ingrese su Correo" className="border border-sky-500 rounded-full px-4 py-1" 
-          value= {email}
-          onChange={(e) => setEmail(e.target.value)}/>
+          <input type="text" placeholder="Ingrese su Correo" className="border border-sky-500 rounded-full px-4 py-1"
+            value={email}
+            onChange={(e) => setEmail(e.target.value)} />
           <h3>Password</h3>
-          <input type="password" placeholder="Ingrese su contraseña" className="border border-sky-500 rounded-full px-4 py-1" 
-          value= {contrasena}
-          onChange={(e) => setContrasena(e.target.value)}/>
-          <button className="bg-sky-500 rounded-full text-white px-6 py-1 block my-4">
-            Login 
+          <input type="password" placeholder="Ingrese su contraseña" className="border border-sky-500 rounded-full px-4 py-1"
+            value={contrasena}
+            onChange={(e) => setContrasena(e.target.value)} />
+          <button className="bg-sky-500 rounded-full text-white px-6 py-1 block my-4" >
+            Login
           </button>
           <Link className="text-sky-500 hover:text-sky-900 transition duration-300 underline font-medium" to="/restablecer-clave">Olvidaste tu contraseña?</Link>
-          <div className="flex flex-row gap-2 my-3">
-            <p className="text-gray-600">
-              ¿Eres nuevo en EduConnect?
-            </p>
-            <Link className="text-red-600 underline" to="/registerAlumno">Registrate</Link>
-          </div>
 
         </form>
+        <div className="flex flex-row gap-2 my-3">
+          <p className="text-gray-600">
+            ¿Eres nuevo en EduConnect?
+          </p>
+          <Link className="text-red-600 underline" to="/registerAlumno">Registrate</Link>
+        </div>
       </SectionContainer>
       <Footer />
     </>

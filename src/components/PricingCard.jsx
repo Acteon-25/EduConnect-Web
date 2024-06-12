@@ -1,6 +1,9 @@
 import axios from 'axios'
+import { useNavigate } from 'react-router-dom';
 
 const PricingCard = ({plan, precio, caracteristicas, highlighted = false, value }) => {
+  
+  const navigate = useNavigate();
 
   async function comprarMembresia() {
 
@@ -17,12 +20,14 @@ const PricingCard = ({plan, precio, caracteristicas, highlighted = false, value 
       localStorage.setItem('token', token)
     }catch(e){
       console.error('Error al comprar la membresía:', e);
+      
     }
   }
 
 
   const handleClick = (() =>{
     comprarMembresia()
+    navigate('/login')
   })
   
   
