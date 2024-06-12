@@ -59,15 +59,19 @@ const RegisterPage = () => {
           <h3>Email: </h3>
           <input type="email" name="" id="" placeholder="Ingrese su email" className="border border-sky-500 rounded-full px-4 py-1"
           value={email}
-          onChange={(e) => setEmail(e.target.value)} />
+          onChange={(e) => setEmail(e.target.value)} 
+          required/>
           <h3>Nombre: </h3>
           <input type="text" placeholder="Ingrese su username" className="border border-sky-500 rounded-full px-4 py-1" 
           value={nombre}
-          onChange={(e) => setNombre(e.target.value)} />
+          onChange={(e) => setNombre(e.target.value)}
+          required />
           <h3>Contraseña</h3>
           <input type="password" placeholder="Ingrese su contraseña" className="border border-sky-500 rounded-full px-4 py-1"
            value={contrasena}
-           onChange={(e) => setContrasena(e.target.value)} />
+           onChange={(e) => setContrasena(e.target.value)}
+           required 
+           minLength="8"/>
           <button className="bg-sky-500 rounded-full text-white px-6 py-1 block my-4 ">
             Registrate
           </button>
