@@ -3,8 +3,9 @@ import Footer from "../components/Footer";
 import PricingCard from "../components/PricingCard";
 
 const PricingPage = () => {
+
   return (
-    <>
+<>
       <Header />
 
       <section className="bg-gray-100 py-12">
@@ -21,7 +22,7 @@ const PricingPage = () => {
 
           {/* Tarjetas de Planes */}
           <div className="mt-10 grid grid-cols-1 gap-8 md:grid-cols-2 lg:grid-cols-3">
-            {/* Tarjeta Plan Ratonte */}
+            {/* Tarjeta Plan Básico */}
             <PricingCard
               plan="Básico"
               precio="49.99/mes"
@@ -32,22 +33,27 @@ const PricingPage = () => {
                 "Acceso limitado a material de la biblioteca",
                 "Comentarios y evaluaciones sobre asesorías",
               ]}
+              value="Basico"
+
             />
 
-            {/* Tarjeta Plan Ancient */}
+            {/* Tarjeta Plan Premium */}
             <PricingCard
               plan="Premium"
               precio="79.99/mes"
               caracteristicas={[
                 "Acceso ilimitado a la biblioteca virtual",
                 "Soporte 24hs",
-                "Acceso a reportes de notas y cometarios del alumno",
+                "Acceso a reportes de notas y comentarios del alumno",
                 "El número del sr. vásquez",
               ]}
-              highlighted
+              highlighted 
+              value="ESTUDIANTE_PRO"
+
+
             />
 
-            {/* Tarjeta Plan Inmortal */}
+            {/* Tarjeta Plan Super ArchiMegaPremium */}
             <PricingCard
               plan="Super ArchiMegaPremium"
               precio="119.99/mes"
@@ -56,10 +62,12 @@ const PricingPage = () => {
                 "Capacitación Soporte 24hs",
                 "Elección de Asesores",
                 "El número del CEO Jhonatan Fernandez para llamarlo directamente",
-                "Acceso al código fuente",  
+                "Acceso al código fuente",
                 "Acceso a la casa del sr. vásquez",
                 "Acceso a party de 5 de divine a +",
               ]}
+              value="ESTUDIANTE_PRO"
+
             />
           </div>
         </div>

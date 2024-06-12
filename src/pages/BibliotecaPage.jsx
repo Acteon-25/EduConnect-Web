@@ -9,12 +9,18 @@ const BibliotecaPage = () => {
   const [books, setBook] = useState()
 
   useEffect(() => {
-    fetch(`https://api.thecatapi.com/v1/images/search?limit=10`)
-      .then(res => res.json())
-      .then(data => {
-        console.log(data)
+    const url = 'https://api.thecatapi.com/v1/images/search?limit=10';
+    async function fetchData() {
+    try {
+        const response = await fetch (url);
+        const data = await response.json();
         setBook(data)
-      })
+    } catch (error) {
+      console.log('Error:', error);
+    }
+    } 
+    
+    fetchData()
   }, [])
 
   return (
