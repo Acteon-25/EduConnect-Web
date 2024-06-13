@@ -13,10 +13,15 @@ const PricingCard = ({ plan, precio, caracteristicas, highlighted = false, value
       tokenTemporal: localStorage.getItem('token')
 
     }
-      const response = await axios.post('http://localhost:8080/membresias/comprar',compra)
-      console.log(response);
-
-
+    console.log(compra);
+    try {
+      const response = await axios.post('http://localhost:8080/membresias/comprar', compra)
+      console.log("Compra exitosa")
+      const token = response.data
+      localStorage.setItem('token', token)
+    } catch (e) {
+      console.error('Error al comprar la membresía:', e);
+    }
   }
 
 

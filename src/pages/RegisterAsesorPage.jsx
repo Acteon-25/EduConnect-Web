@@ -3,7 +3,7 @@ import { useNavigate } from 'react-router-dom'
 import Profesor from '../img/ProfesorOscuro.jpeg'
 import Header from "../components/Header"
 import Footer from "../components/Footer"
-import {useState} from 'react'
+import { useState } from 'react'
 import axios from 'axios'
 
 const RegisterAsesorPage = () => {
@@ -25,18 +25,18 @@ const RegisterAsesorPage = () => {
       },
       especialidad: especialidad,
     }
-    
-    try{
+
+    try {
 
       const response = await axios.post('http://localhost:8080/registro/asesor', nuevoAsesor);
-      localStorage.setItem('token', response.data.tokenTemporal); 
+      localStorage.setItem('token', response.data.tokenTemporal);
       navigate('/')
-    }catch(e){
+    } catch (e) {
       console.log(e);
     }
   }
 
-  const handleSubmit = (e) =>{
+  const handleSubmit = (e) => {
     e.preventDefault();
     registrarAsesor()
   }
@@ -60,36 +60,36 @@ const RegisterAsesorPage = () => {
               Registro de Asesor
             </button>
           </div>
-        
-        <form onSubmit={handleSubmit}>
-        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Ullam, iusto.</p>
-          <h3>Correo Electronico: </h3>
-          <input type="email" name="" id="" placeholder="Ingrese su email" className="border border-sky-500 rounded-full px-4 py-1"
-          required
-          value={email}
-          onChange={(e) => setEmail(e.target.value)}
-          />
-          <h3>Nombres</h3>
-          <input type="text" placeholder="Ingrese su username" className="border border-sky-500 rounded-full px-4 py-1" 
-          required
-          value={nombre}
-          onChange={(e) => setNombre(e.target.value)}/>
-          <h3>Contraseña</h3>
-          <input type="password" placeholder="Ingrese su contraseña" className="border border-sky-500 rounded-full px-4 py-1" 
-          value={contrasena}
-          onChange={(e) => setContrasena(e.target.value)}/>
-          <h3>Especialidad</h3>
-          <input type="text" placeholder="Ingrese la especialidad" className="border border-sky-500 rounded-full px-4 py-1"
-          value={especialidad}
-          onChange={(e) => setEspecialidad(e.target.value)}
-          />
-          <h3>Ingreso de archivos</h3>
-          <input type="file" placeholder="Ingrese su contraseña" className="border border-sky-500 rounded-full px-4 py-1" 
-          />
-          <button className="bg-sky-500 rounded-full text-white px-6 py-1 block my-4 ">
-            Registrate
-          </button>
-        </form>
+
+          <form onSubmit={handleSubmit}>
+            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Ullam, iusto.</p>
+            <h3>Correo Electronico: </h3>
+            <input type="email" name="" id="" placeholder="Ingrese su email" className="border border-sky-500 rounded-full px-4 py-1"
+              required
+              value={email}
+              onChange={(e) => setEmail(e.target.value)}
+            />
+            <h3>Nombres</h3>
+            <input type="text" placeholder="Ingrese su username" className="border border-sky-500 rounded-full px-4 py-1"
+              required
+              value={nombre}
+              onChange={(e) => setNombre(e.target.value)} />
+            <h3>Contraseña</h3>
+            <input type="password" placeholder="Ingrese su contraseña" className="border border-sky-500 rounded-full px-4 py-1"
+              value={contrasena}
+              onChange={(e) => setContrasena(e.target.value)} />
+            <h3>Especialidad</h3>
+            <input type="text" placeholder="Ingrese la especialidad" className="border border-sky-500 rounded-full px-4 py-1"
+              value={especialidad}
+              onChange={(e) => setEspecialidad(e.target.value)}
+            />
+            <h3>Ingreso de archivos</h3>
+            <input type="file" placeholder="Ingrese su contraseña" className="border border-sky-500 rounded-full px-4 py-1"
+            />
+            <button className="bg-sky-500 rounded-full text-white px-6 py-1 block my-4 ">
+              Registrate
+            </button>
+          </form>
 
         </div>
       </SectionContainer>

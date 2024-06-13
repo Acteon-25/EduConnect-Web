@@ -33,7 +33,7 @@ const PricingPage = () => {
                 "Acceso limitado a material de la biblioteca",
                 "Comentarios y evaluaciones sobre asesorías",
               ]}
-              value="Basico"
+              value="ESTUDIANTE_PRO"
 
             />
 
