@@ -1,4 +1,3 @@
-//import { useParams } from 'react-router-dom'
 import Meeting from '../components/Meeting'
 import SideBar from '../components/SideBar'
 import Buscador from '../icons/Buscador.svg'
@@ -7,18 +6,14 @@ import Foto from '../img/Foto.png'
 import axios from "axios"
 
 const token = localStorage.getItem("token")
-
 const res = await axios.get("http://localhost:8080/estudiantes/perfil", {
   headers: {
     'Authorization': `Bearer ${token}`
   }
 })
-
 const nameUser = res.data.nombre
 
 const LoginUserPage = () => {
-
-  //const { id } = useParams()
 
   return (
     <div className="">
@@ -43,7 +38,7 @@ const LoginUserPage = () => {
           Asesorias
         </div>
         <div className='w-full'>
-        <Meeting nameUser={nameUser}/>
+          <Meeting nameUser={nameUser} />
         </div>
         <div>
           Tareas

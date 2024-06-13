@@ -1,26 +1,32 @@
 import Header from "../components/Header";
 import Footer from "../components/Footer";
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 import SectionContainer from "../components/SectionContainer";
 import axios from "axios"
 import { useState } from "react";
 
+const tokenRestablecimiento = localStorage.getItem("token2")
 
 const ConfirmarContraPage = () => {
+  const navigate = useNavigate()
 
   const [contrasena, setContrasena] = useState();
 
   async function change() {
-    axios.put("", {
-      contrasena: contrasena,
-    })
-      .then((res) => {
-        console.log(res.data)
+    try {
+      const res = await axios.post(`http://localhost:8080/restablecer-contrasena/${tokenRestablecimiento}`, {
+        nuevaContrasena: contrasena,
       })
-      .catch((err) => console.log(err))
+      console.log(res)
+      console.log(tokenRestablecimiento)
+      navigate(`/login`)
+    } catch (error) {
+      console.log(error);
+    }
+
   }
 
-  const handleClick = (e) => {
+  const handleSubmit = (e) => {
     e.preventDefault();
     change()
   }
@@ -32,7 +38,7 @@ const ConfirmarContraPage = () => {
       <Header />
       <SectionContainer>
         <div className="flex items-center justify-center bg my-10">
-          <form className="max-w-md p-8 ">
+          <form className="max-w-md p-8 " onSubmit={handleSubmit}>
             <h3 className="text-4xl font-bold text-center mb-4">
               Ingrese su nueva contraseña
             </h3>
@@ -55,7 +61,6 @@ const ConfirmarContraPage = () => {
             <button
               type="submit"
               className="bg-green-600 hover:bg-green-500 text-white font-bold py-2 px-4 rounded w-full"
-              onClick={handleClick}
             >
               Cambiar
             </button>

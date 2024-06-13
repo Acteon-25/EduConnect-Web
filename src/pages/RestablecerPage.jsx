@@ -1,26 +1,31 @@
 import Header from "../components/Header";
 import Footer from "../components/Footer";
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 import SectionContainer from "../components/SectionContainer";
 import { useState } from "react";
-useState
+import axios from "axios"
 
 const RestablecerPage = () => {
+  const navigate = useNavigate()
 
   const [email, setEmail] = useState();
 
   async function change() {
     try {
-      const res = await axios.post("", {
-        correoElectronico: email
+      const res = await axios.post(`http://localhost:8080/restablecer-contrasena?correoElectronico=${email}`, {
+        headers: {
+          'Content-Type': 'application/x-www-form-urlencoded'
+        }
       })
-
-    } catch (e) {
-      throw new Error(e.response?.data?.message || 'Error al iniciar sesión');
+      localStorage.setItem('token2', res.data.tokenRestablecimiento);
+      console.log(res.data.tokenRestablecimiento)
+      navigate(`/confirmarContra`)
+    } catch (err) {
+      console.log(err);
     }
   }
 
-  const handleClick = (e) => {
+  const handleSubmit = (e) => {
     e.preventDefault();
     change()
   }
@@ -30,7 +35,7 @@ const RestablecerPage = () => {
       <Header />
       <SectionContainer>
         <div className="flex items-center justify-center bg my-10">
-          <form className="max-w-md p-8 ">
+          <form className="max-w-md p-8 " onSubmit={handleSubmit}>
             <h3 className="text-4xl font-bold text-center mb-4">
               Recuperemos el acceso a tu cuenta
             </h3>
@@ -52,9 +57,7 @@ const RestablecerPage = () => {
             />
 
             <button
-              type="submit"
               className="bg-green-600 hover:bg-green-500 text-white font-bold py-2 px-4 rounded w-full"
-              onClick={handleClick}
             >
               Recuperar contraseña
             </button>

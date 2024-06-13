@@ -29,7 +29,7 @@ const LoginPage = () => {
         }
       })
       const ruta = res.data.idUsuario
-      navigate(`/login/${ruta}`) // FALTA CAMBIAR LA REDIRECCION AL INICIAR SESION
+      navigate(`/login/${ruta}`) // Arreglar Navigate con otro comando para que reinicie la pagina
 
     } catch (e) {
       alert("Credenciales Incorrectas")
