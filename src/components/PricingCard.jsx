@@ -20,7 +20,6 @@ const PricingCard = ({ plan, precio, caracteristicas, highlighted = false, value
       localStorage.setItem('token', token)
     } catch (e) {
       console.error('Error al comprar la membresía:', e);
-
     }
   }
 

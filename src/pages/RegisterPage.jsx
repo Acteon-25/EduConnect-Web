@@ -10,7 +10,6 @@ import axios from 'axios'
 const RegisterPage = () => {
   const navigate = useNavigate()
 
-
   const [email, setEmail] = useState();
   const [nombre, setNombre] = useState();
   const [contrasena, setContrasena] = useState();

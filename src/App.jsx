@@ -14,6 +14,8 @@ import RegisterAsesorPage from './pages/RegisterAsesorPage'
 import AdministracionUsuariosPage from "./pages/AdministracionUsuariosPage"
 import AdministrarAsesoresPage from "./pages/AdministrarAsesoresPage"
 import MeetingPage from "./pages/MeetingPage"
+import ConfirmarContraPage from "./pages/ConfirmarContraPage"
+
 
 function App() {
 
@@ -36,6 +38,7 @@ function App() {
           <Route path="/editProfile" element={<EditProfilePage />} />
           <Route path="/dashboard" element={<DashboardPage />} />
           <Route path="/meeting" element={<MeetingPage />} />
+          <Route path="/confirmarContra" element={<ConfirmarContraPage />} />
           <Route path="*" element={<ErrorPage />} />
         </Routes>
       </BrowserRouter>

@@ -22,7 +22,13 @@ const LoginPage = () => {
       const response = await axios.post('http://localhost:8080/login', details);
       const token = response.data;
       localStorage.setItem('token', token);
-      navigate('/registerAlumno') // FALTA CAMBIAR LA REDIRECCION AL INICIAR SESION
+      const res = await axios.get("http://localhost:8080/estudiantes/perfil", {
+        headers: {
+          'Authorization': `Bearer ${token}`
+        }
+      })
+      const ruta = res.data.idUsuario
+      navigate(`/login/${ruta}`) // FALTA CAMBIAR LA REDIRECCION AL INICIAR SESION
 
     } catch (e) {
       throw new Error(e.response?.data?.message || 'Error al iniciar sesión');
