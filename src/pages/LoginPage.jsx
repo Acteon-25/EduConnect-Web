@@ -19,6 +19,7 @@ const LoginPage = () => {
         correoElectronico: email,
         contrasena: contrasena,
       }
+
       const response = await axios.post('http://localhost:8080/login', details);
       const token = response.data;
       localStorage.setItem('token', token);
@@ -31,7 +32,7 @@ const LoginPage = () => {
       navigate(`/login/${ruta}`) // FALTA CAMBIAR LA REDIRECCION AL INICIAR SESION
 
     } catch (e) {
-      throw new Error(e.response?.data?.message || 'Error al iniciar sesión');
+      alert("Credenciales Incorrectas")
     }
   }
 
@@ -62,7 +63,7 @@ const LoginPage = () => {
           <input type="text" placeholder="Ingrese su Correo" className="border border-sky-500 rounded-full px-4 py-1"
             value={email}
             onChange={(e) => setEmail(e.target.value)} />
-          <h3>Password</h3>
+          <h3>Contraseña: </h3>
           <input type="password" placeholder="Ingrese su contraseña" className="border border-sky-500 rounded-full px-4 py-1"
             value={contrasena}
             onChange={(e) => setContrasena(e.target.value)} />

@@ -1,4 +1,4 @@
-import { NavLink, useNavigate } from "react-router-dom";
+import { NavLink, useNavigate, Link } from "react-router-dom";
 import Logo from "../icons/Logo.svg";
 import LineDrop from "../icons/LineDrop.svg";
 import { useState } from "react";
@@ -13,7 +13,9 @@ const Header = () => {
   return (
     <header className="flex flex-col md:flex-row justify-between items-center py-4 w-full mx-auto bg-green-700 px-5">
       <div className="flex justify-between w-full">
+        <Link to="/">
         <img src={Logo} alt="" className="rounded-full size-12" />
+        </Link>
         <img
           src={LineDrop}
           alt=""
