@@ -14,6 +14,7 @@ import RegisterAsesorPage from './pages/RegisterAsesorPage'
 import AdministracionUsuariosPage from "./pages/AdministracionUsuariosPage"
 import AdministrarAsesoresPage from "./pages/AdministrarAsesoresPage"
 import MeetingPage from "./pages/MeetingPage"
+import AsesorDetailsPage from './pages/AsesorDetailsPage'
 
 function App() {
 
@@ -37,6 +38,7 @@ function App() {
           <Route path="/dashboard" element={<DashboardPage />} />
           <Route path="/meeting" element={<MeetingPage />} />
           <Route path="*" element={<ErrorPage />} />
+          <Route path="/admin/asesores/:id" element={<AsesorDetailsPage />} />
         </Routes>
       </BrowserRouter>
     </>

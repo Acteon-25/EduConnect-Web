@@ -2,10 +2,35 @@ import { useParams } from 'react-router-dom'
 import SideBar from '../components/SideBar'
 import Notification from '../icons/Notification.svg'
 import Foto from '../img/Foto.png'
+import {useEffect} from 'react' 
+import axios from 'axios' 
 
 const DashboardPage = () => {
 
   const { id } = useParams()
+
+  async function cargarAsesores() {
+
+    const token = 'eyJhbGciOiJIUzUxMiIsInR5cCI6IkpXVCJ9.eyJzdWIiOiJhZG1pbkBlZHVjb25uZWN0LmNvbSIsImF1dGhvcml0aWVzIjoiQURNSU4iLCJleHAiOjE3MTgzMzc4MDR9.MhNasHXbLyGaMoQxovi3K_ztfBqErXwg_Cum3-0ELkA09vbDjj4aJ6dbmqpFqVDzaCE7z7Q4QX5OiHRVCJjFCQ'
+
+    const response = await axios.get('http://localhost:8080/admin/asesores/pendientes',{
+      headers: {
+        Authorization: `Bearer ${token}`
+      }
+    });
+
+    console.log(response.data);
+
+
+
+
+   
+
+  }
+  useEffect(() => {
+    cargarAsesores()
+  }, [])
+
 
   return (
     <div className="">
@@ -27,38 +52,6 @@ const DashboardPage = () => {
 
       <div className='grid grid-cols-1 place-items-center w-screen'>
         <h3 className='text-3xl'>Administracion de solicitudes de Asesores</h3>
-        <ul className='flex flex-col gap-4'>
-          <li className='flex gap-4 my-5'>
-            <h4 className='text-xl font-bold'>Asesor 1</h4>
-            <button className='bg-yellow-500 rounded-xl py-1 px-3'>Revisar documentos</button>
-            <button className='bg-green-500 rounded-xl py-1 px-3'>Aceptar Asesor</button>
-            <button className='bg-red-500 rounded-xl py-1 px-3'>Rechazar Asesor</button>
-          </li>
-          <li className='flex gap-4 my-5'>
-            <h4 className='text-xl font-bold'>Asesor 2</h4>
-            <button className='bg-yellow-500 rounded-xl py-1 px-3'>Revisar documentos</button>
-            <button className='bg-green-500 rounded-xl py-1 px-3'>Aceptar Asesor</button>
-            <button className='bg-red-500 rounded-xl py-1 px-3'>Rechazar Asesor</button>
-          </li>
-          <li className='flex gap-4 my-5'>
-            <h4 className='text-xl font-bold'>Asesor 3</h4>
-            <button className='bg-yellow-500 rounded-xl py-1 px-3'>Revisar documentos</button>
-            <button className='bg-green-500 rounded-xl py-1 px-3'>Aceptar Asesor</button>
-            <button className='bg-red-500 rounded-xl py-1 px-3'>Rechazar Asesor</button>
-          </li>
-          <li className='flex gap-4 my-5'>
-            <h4 className='text-xl font-bold'>Asesor 4</h4>
-            <button className='bg-yellow-500 rounded-xl py-1 px-3'>Revisar documentos</button>
-            <button className='bg-green-500 rounded-xl py-1 px-3'>Aceptar Asesor</button>
-            <button className='bg-red-500 rounded-xl py-1 px-3'>Rechazar Asesor</button>
-          </li>
-          <li className='flex gap-4 my-5'>
-            <h4 className='text-xl font-bold'>Asesor 5</h4>
-            <button className='bg-yellow-500 rounded-xl py-1 px-3'>Revisar documentos</button>
-            <button className='bg-green-500 rounded-xl py-1 px-3'>Aceptar Asesor</button>
-            <button className='bg-red-500 rounded-xl py-1 px-3'>Rechazar Asesor</button>
-          </li>
-        </ul>
       </div>
     </div>
   )
